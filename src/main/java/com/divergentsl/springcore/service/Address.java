@@ -1,6 +1,8 @@
 package com.divergentsl.springcore.service;
+
 /**
- * Address  class will contain address{city , state ,country }
+ * Address class will contain address{city , state ,country }
+ * 
  * @author JAI MAHAKAL
  *
  */
@@ -42,5 +44,5 @@ public class Address {
 	public String toString() {
 		return "Address [city=" + city + ", state=" + state + ", country=" + country + "]";
 	}
-
+	
 }

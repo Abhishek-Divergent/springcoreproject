@@ -12,18 +12,27 @@
 		 http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 		 http://www.springframework.org/schema/aop 
 		 http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-    <!-- injecting by setter -->
-    <bean id="addressid" class=" com.divergentsl.springcore.service.Address" >
-    <property name="city" value="harpalpur" />
-    <property name="state" value="madhya pradesh" />
-    <property name="country" value="India" />
-    </bean>
-    <bean id="studentid" class=" com.divergentsl.springcore.service.Student"> 
-		<property name="id" value="1000" /> 
-		<property name="name" value="Abhishek Sahu"/> 
-		<property name="address" ref="addressid" />	
-	</bean>
-<!-- injecting object by  static factory method  or get reference  by factory method-->
-		<bean id="factorymethodid"  class=" com.divergentsl.springcore.service.FactoryMethodService"  factory-method="getInstance" /> 
+		 <context:annotation-config />
 
+<!-- **************************************************** -->  
+	<bean id="EmployeeInitDestroyByInterface"
+		class=" com.divergentsl.springcore.service.EmployeeInitDestroyByInterface" >
+		<property name="mobile" value="8120097076"></property>
+	</bean>
+
+
+<!-- ******************************************************** -->
+
+<bean id="EmployeeInitDestroyByAnnotation" class="com.divergentsl.springcore.service.EmployeeInitDestroyByAnnotation" >
+<property name="name" value="Abhishek Sahu"></property>
+</bean>     
+
+
+<!-- ******************************************* -->
+<bean id="EmployeeInitDestroyByMethod" class="com.divergentsl.springcore.service.EmployeeInitDestroyByMethod"
+init-method="init" destroy-method="destroy">
+<property name="age" value="22"></property>
+</bean>
+
+	
 </beans>
