@@ -1,5 +1,7 @@
 package com.divergentsl.springcore.service;
 
+import javax.validation.constraints.Size;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -11,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class Student {
 	private int id;
+	@Size(min=4 ,max=8,message = "string is to long ")
 	private String name;
+	
 	@Autowired
 	private Address address;
 
